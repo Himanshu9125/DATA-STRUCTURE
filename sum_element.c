@@ -47,8 +47,11 @@ void traverse()
 
 int main()
 {
-
-    int a[] = {4, 5, 6, 8, 9};
-    create(a, 5);
+    int n;
+    scanf("%d",&n);
+    int a[n];
+    for(int i=0;i<n;i++)
+        scanf("%d",&a[i]);
+    create(a, n);
     traverse();
 }
