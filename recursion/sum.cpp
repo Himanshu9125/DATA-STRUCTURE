@@ -1,0 +1,17 @@
+#include<iostream>
+using namespace std;
+ int sum(int n){
+   if(n==0)
+     return;
+     else{
+      n+(n-1);
+     }
+
+ }
+int main(){
+  int n;
+  cin>>n;
+  sum(n);
+       cout<<sum<<endl;
+    return 0;
+}
