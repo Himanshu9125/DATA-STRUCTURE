@@ -1,0 +1,55 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+queue<int>q;
+void BFS(vector<int>arr[],int v)
+{
+    int visited[v]={0};
+    int r;
+    cout<<"0";
+     visited[0]=1;
+      q.push(0);
+      while (!q.empty())
+      {
+         r=q.front();
+         q.pop();
+         cout << " " << r;
+         for (int i = 1; i < arr[r].size(); i++)
+         {
+           if (visited == 0)
+           {
+             q.push(arr[r][i]);
+             visited[arr[r][i]] = 1 ; 
+           }
+         }
+      }
+}
+
+int main(){
+      int edg, n;
+      cout << " enter the number of edge" << endl;
+      cin >> edg;
+      cout << "enter the number of vertex" << endl;
+      cin >> n;
+
+      vector<int> adj[n];
+      for (int j = 1; j <= edg; j++)
+      {
+          int a, b;
+          cout << "end point of edge" << j << ":";
+          cin >> a >> b;
+          adj[a].push_back(b);
+          adj[b].push_back(a);
+      }
+      cout << "adjusent list" << endl;
+      for (int i = 0; i < n; i++)
+      {
+          cout << i << ":";
+          for (int j = 0; j < adj[i].size(); j++)
+          {
+            cout << adj[i][j] << ",";
+          }
+          cout << endl;
+      }
+    BFS(adj,n);
+}
