@@ -1,0 +1,51 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void bubble(int x, vector<int> &nums, int n)
+{
+  if (x <= (n - 2))
+  {
+    if (nums[x] > nums[x + 1])
+    {
+      swap(nums[x], nums[x + 1]);
+    }
+    bubble(x + 1, nums, n);
+  }
+  else
+  {
+    return;
+  }
+}
+
+void bubble_sort(vector<int> &nums, int n)
+{
+  if (n >= 0)
+  {
+    int x = 0;
+    bubble(x, nums, n);
+  }
+  else
+  {
+    return;
+  }
+  n--;
+  bubble_sort(nums, n);
+}
+
+int main()
+{
+  int n;
+  cin >> n;
+  vector<int> nums(n);
+  for (int i = 0; i < n; i++)
+  {
+    cin >> nums[i];
+  }
+  bubble_sort(nums, n);
+
+  for (auto i : nums)
+  {
+    cout << i << " ";
+  }
+  cout << endl;
+}
